@@ -1,15 +1,15 @@
 public class Book {
-    long isbn;
+    String isbn;
     String title;
     String author;
 
-    public Book(long isbn, String title, String author){
+    public Book(String isbn, String title, String author){
         this.isbn = isbn;
         this.title = title;
         this.author = author;
     }
 
-    public long getIsbn(){
+    public String getIsbn(){
         return this.isbn;
     }
 

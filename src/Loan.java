@@ -1,10 +1,10 @@
 public class Loan {
     int loanId;
     int memberId;
-    long isbn;
+    String isbn;
     String dueDate;
 
-    public Loan(int loanId, int memberId, long isbn, String dueDate){
+    public Loan(int loanId, int memberId, String isbn, String dueDate){
         this.loanId = loanId;
         this.memberId = memberId;
         this.isbn = isbn;
@@ -19,7 +19,7 @@ public class Loan {
         return this.memberId;
     }
 
-    public long getIsbn(){
+    public String getIsbn(){
         return this.isbn;
     }
 

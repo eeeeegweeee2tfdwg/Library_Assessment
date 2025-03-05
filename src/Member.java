@@ -1,9 +1,9 @@
 public class Member {
     int memberId;
     String name;
-    int contact;
+    String contact;
 
-    public Member(int memberId, String name, int contact){
+    public Member(int memberId, String name, String contact){
         this.memberId = memberId;
         this.name = name;
         this.contact = contact;
@@ -17,7 +17,7 @@ public class Member {
         return this.name;
     }
     
-    public int getContact(){
+    public String getContact(){
         return this.contact;
     }
 
