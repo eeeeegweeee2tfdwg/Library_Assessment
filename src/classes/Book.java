@@ -1,7 +1,9 @@
+package classes;
+
 public class Book {
-    String isbn;
-    String title;
-    String author;
+    private final String isbn;
+    private final String title;
+    private final String author;
 
     public Book(String isbn, String title, String author) {
         this.isbn = isbn;

@@ -1,8 +1,10 @@
+package classes;
+
 public class Loan {
-    int loanId;
-    int memberId;
-    String isbn;
-    String dueDate;
+    private final int loanId;
+    private final int memberId;
+    private final String isbn;
+    public String dueDate;
 
     public Loan(int loanId, int memberId, String isbn, String dueDate){
         this.loanId = loanId;
@@ -11,7 +13,7 @@ public class Loan {
         this.dueDate = dueDate;
     }
 
-    public int getLoadId(){
+    public int getLoanId(){
         return this.loanId;
     }
     

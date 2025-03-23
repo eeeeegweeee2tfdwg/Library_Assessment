@@ -1,8 +1,12 @@
+import classes.Book;
+import classes.Loan;
+import classes.Member;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class LibrarySystem {
+public class MelLibrary {
     ArrayList<Book> books;
     ArrayList<Member> members;
     ArrayList<Loan> loans;
@@ -10,7 +14,7 @@ public class LibrarySystem {
     int nextLoanId = 1;
     
 
-    public LibrarySystem() {
+    public MelLibrary() {
         books = new ArrayList<>();
         members = new ArrayList<>();
         loans = new ArrayList<>();
@@ -19,6 +23,22 @@ public class LibrarySystem {
 
     public void run() {
         int choice;
+        // Add books
+        Book _newBook = new Book("1", "Test Book", "Luke");
+        books.add(_newBook);
+        Book _newBook1 = new Book("2", "Another Test Book", "Tim");
+        books.add(_newBook1);
+        Book _newBook2 = new Book("3", "Again Another Test Book", "Mike");
+        books.add(_newBook2);
+
+        Member _newMember = new Member(1, "Simon", "00");
+        members.add(_newMember);
+        Member _newMember1 = new Member(2, "Bob", "01");
+        members.add(_newMember1);
+        Member _newMember2 = new Member(3, "Barry", "02");
+        members.add(_newMember2);
+
+
         System.out.print("\033[H\033[2J"); System.out.flush();
 
         
@@ -31,7 +51,7 @@ public class LibrarySystem {
             System.out.println("4. Remove Book");
             System.out.println("5. Add Member");
             System.out.println("6. Search Member");
-            System.out.println("7. Display Member");
+            System.out.println("7. Display Members");
             System.out.println("8. Remove Member");
             System.out.println("9. Loan Book");
             System.out.println("10. Return Book");
@@ -94,12 +114,14 @@ public class LibrarySystem {
         System.out.println("Search by: ");
         System.out.println("1. ISBN");
         System.out.println("2. Title ");
+        System.out.println("3. Author ");
         System.out.print("Enter your choice: ");
         choice = scanner.nextInt();
         scanner.nextLine();
         switch (choice) {
             case 1 -> searchIsbn();
             case 2 -> searchTitle();
+            case 3 -> searchAuthor();
             default -> {
                 System.out.print("\033[H\033[2J");
                 System.out.flush();
@@ -135,6 +157,20 @@ public class LibrarySystem {
         System.out.print("\033[H\033[2J");
         System.out.flush();
         System.out.println("Book with title '" + title + "' not found.");
+    }
+
+    public void searchAuthor() {
+        System.out.print("Enter Author: ");
+        String Author = scanner.nextLine();
+        for (Book book : books) {
+            if (book.getAuthor().equalsIgnoreCase(Author)) {
+                book.displayInfo();
+                return;
+            }
+        }
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+        System.out.println("Book with author '" + Author + "' not found.");
     }
 
     public void displayBook() {
@@ -394,7 +430,7 @@ public class LibrarySystem {
                 System.out.flush();
                 for (Book book : books) {
                     if (book.getIsbn().equals(loan.getIsbn())) {
-                        System.out.println("  Title: " + book.getTitle() + ", ISBN: " + loan.getIsbn() + ", Due Date: "
+                        System.out.println("Loan ID: " + loan.getLoanId() + "  Title: " + book.getTitle() + "  Author: " + book.getAuthor() + ", ISBN: " + loan.getIsbn() + ", Due Date: "
                                 + loan.getDueDate());
                         break;
                     }
@@ -408,8 +444,8 @@ public class LibrarySystem {
         }
     }
 
-    public static void main(String[] args) {
-        LibrarySystem library = new LibrarySystem();
+    public static void main(String[] ignored) {
+        MelLibrary library = new MelLibrary();
         library.run();
     }
 }

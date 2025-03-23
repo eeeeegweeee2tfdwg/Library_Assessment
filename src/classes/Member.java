@@ -1,7 +1,9 @@
+package classes;
+
 public class Member {
-    int memberId;
-    String name;
-    String contact;
+    private final int memberId;
+    private final String name;
+    private String contact;
 
     public Member(int memberId, String name, String contact){
         this.memberId = memberId;
@@ -17,11 +19,12 @@ public class Member {
         return this.name;
     }
     
-    public String getContact(){
+    public String getContact() {
         return this.contact;
     }
 
     public void displayInfo(){
+        contact = getContact();
         System.out.println("Member ID: " + memberId);
         System.out.println("Name: " + name);
         System.out.println("Contact: " + contact);
