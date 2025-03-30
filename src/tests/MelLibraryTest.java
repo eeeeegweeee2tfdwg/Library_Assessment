@@ -5,12 +5,10 @@ import classes.Member;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import classes.*;
-
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MelLibraryTest {
