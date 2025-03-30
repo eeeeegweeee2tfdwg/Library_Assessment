@@ -44,7 +44,7 @@ class MelLibraryTest {
 
 
     @Test
-    void addBook() {
+    void addBookTest() {
         String input = "978-0321765723\nEffective Java\nJoshua Bloch\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -71,7 +71,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void searchIsbn() {
+    void searchIsbnTest() {
         String input = "1";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -89,7 +89,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void searchIsbnNotFound() {
+    void searchIsbnNotFoundTest() {
         String input = "13";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -107,7 +107,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void searchTitle() {
+    void searchTitleTest() {
         String input = "Test Book";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -125,7 +125,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void searchAuthor() {
+    void searchAuthorTest() {
         String input = "Luke";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -143,7 +143,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void searchAuthorNotFound() {
+    void searchAuthorNotFoundTest() {
         String input = "Tommy";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -161,7 +161,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void removeBook() {
+    void removeBookTest() {
         String input = "1";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -187,7 +187,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void removeBookNotFound() {
+    void removeBookNotFoundTest() {
         String input = "30";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -213,7 +213,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void addMember() {
+    void addMemberTest() {
         String input = "1\nCameron\n0000000";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -235,7 +235,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void searchID() {
+    void searchIDTest() {
         String input = "1\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -254,7 +254,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void searchIDNotFound() {
+    void searchIDNotFoundTest() {
         String input = "10\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -273,7 +273,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void searchName() {
+    void searchNameTest() {
         String input = "Bob\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -291,7 +291,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void searchNameNotFound() {
+    void searchNameNotFoundTest() {
         String input = "Cameron\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -309,7 +309,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void removeMember() {
+    void removeMemberTest() {
         String input = "1\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -336,7 +336,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void removeMemberNotFound() {
+    void removeMemberNotFoundTest() {
         String input = "10\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -363,7 +363,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void loanBook() {
+    void loanBookTest() {
         String input = "1\n1\nNow\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -419,7 +419,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void loanBookNotFoundOne() {
+    void loanBookNotFoundOneTest() {
         String input = "10\n1\nNow\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -475,7 +475,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void loanBookNotFoundTwo() {
+    void loanBookNotFoundTwoTest() {
         String input = "1\n10\nNow\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -531,7 +531,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void returnBook() {
+    void returnBookTest() {
         String input = "1\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
@@ -561,7 +561,7 @@ class MelLibraryTest {
     }
 
     @Test
-    void returnBookNotFound() {
+    void returnBookNotFoundTest() {
         String input = "2\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         TestScanner = new Scanner(in);
