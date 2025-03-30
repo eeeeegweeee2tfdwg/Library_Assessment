@@ -1,11 +1,12 @@
+// Import the required modules
 import classes.Book;
 import classes.Loan;
 import classes.Member;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+//Define the MelLibrary class
 public class MelLibrary {
     ArrayList<Book> books;
     ArrayList<Member> members;
@@ -13,7 +14,7 @@ public class MelLibrary {
     Scanner scanner;
     int nextLoanId = 1;
     
-
+    //Define MelLibrary function
     public MelLibrary() {
         books = new ArrayList<>();
         members = new ArrayList<>();
@@ -38,11 +39,12 @@ public class MelLibrary {
         Member _newMember2 = new Member(3, "Barry", "02");
         members.add(_newMember2);
 
+        //Clear the screen
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
 
-        System.out.print("\033[H\033[2J"); System.out.flush();
 
-        
-
+        //Menu display
         do {
             System.out.println("╭┈┈ MelLibrary System ┈┈╮");
             System.out.println("1. Add Book");
@@ -74,6 +76,7 @@ public class MelLibrary {
                 case 10 -> returnBook();
                 case 11 -> displayMemberLoans();
                 case 0 -> {
+                    //Clear the screen and exit
                 System.out.print("\033[H\033[2J");
                 System.out.flush();
                 System.out.println("Exiting...");
@@ -88,7 +91,7 @@ public class MelLibrary {
         scanner.close();
         System.exit(choice);
     }
-
+    //Add a book to the database
     public void addBook() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -106,6 +109,7 @@ public class MelLibrary {
         System.out.println("Book added successfully!");
     }
 
+    // Search for a book
     public void searchBook() {
         int choice;
         System.out.print("\033[H\033[2J");
@@ -130,8 +134,8 @@ public class MelLibrary {
             }
     }
 
+    //Search book via ISBN
     public void searchIsbn() {
-        
         System.out.print("Enter ISBN: ");
         String isbn = scanner.nextLine();
         for (Book book : books) {
@@ -144,7 +148,7 @@ public class MelLibrary {
         System.out.flush();
         System.out.println("Book with ISBN " + isbn + " not found.");
     }
-
+    //Search book by Title
     public void searchTitle() {
         System.out.print("Enter Title: ");
         String title = scanner.nextLine();
@@ -159,6 +163,7 @@ public class MelLibrary {
         System.out.println("Book with title '" + title + "' not found.");
     }
 
+    //Search book by Author
     public void searchAuthor() {
         System.out.print("Enter Author: ");
         String Author = scanner.nextLine();
@@ -173,6 +178,7 @@ public class MelLibrary {
         System.out.println("Book with author '" + Author + "' not found.");
     }
 
+    //Display all books
     public void displayBook() {
         if (books.isEmpty()) {
             System.out.print("\033[H\033[2J");
@@ -189,6 +195,7 @@ public class MelLibrary {
         }
     }
 
+    //Remove a book from the database
     public void removeBook() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -211,6 +218,7 @@ public class MelLibrary {
         System.out.println("Book with ISBN " + isbn + " not found.");
     }
 
+    //Add a new member to the database
     public void addMember() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -229,6 +237,7 @@ public class MelLibrary {
         System.out.println("Member added successfully!");
     }
 
+    //Search for a member
     public void searchMember() {
         int choice;
         System.out.print("\033[H\033[2J");
@@ -253,6 +262,7 @@ public class MelLibrary {
         }
     }
 
+    //Search for a member with their ID
     public void searchID() {
         System.out.print("Enter Member ID: ");
         int memberId = scanner.nextInt();
@@ -268,6 +278,7 @@ public class MelLibrary {
         System.out.println("Member with ID " + memberId + " not found.");
     }
 
+    //Search for a member by their name
     public void searchName() {
         System.out.print("Enter Member Name: ");
         String name = scanner.nextLine();
@@ -282,6 +293,7 @@ public class MelLibrary {
         System.out.println("Member with name '" + name + "' not found.");
     }
 
+    //Display all members
     public void displayMember() {
         if (members.isEmpty()) {
             System.out.print("\033[H\033[2J");
@@ -298,6 +310,7 @@ public class MelLibrary {
         }
     }
 
+    //Remove a member from the database
     public void removeMember() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -321,6 +334,7 @@ public class MelLibrary {
         System.out.println("Member with ID " + memberId + " not found.");
     }
 
+    // Loan a book
     public void loanBook() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -373,6 +387,7 @@ public class MelLibrary {
         System.out.println("Book loaned successfully!");
     }
 
+    //Return a book
     public void returnBook() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -399,6 +414,7 @@ public class MelLibrary {
         }
     }
 
+    //Display all the loans from a member
     public void displayMemberLoans() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -443,7 +459,7 @@ public class MelLibrary {
             System.out.println("No books currently loaned by this member.");
         }
     }
-
+    //Run the script
     public static void main(String[] ignored) {
         MelLibrary library = new MelLibrary();
         library.run();
