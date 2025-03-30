@@ -1,9 +1,7 @@
 // Import the required modules
-
 import classes.Book;
 import classes.Loan;
 import classes.Member;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -22,12 +20,6 @@ public class MelLibrary {
         members = new ArrayList<>();
         loans = new ArrayList<>();
         scanner = new Scanner(System.in);
-    }
-
-    //Run the script
-    public static void main(String[] ignored) {
-        MelLibrary library = new MelLibrary();
-        library.run();
     }
 
     public void run() {
@@ -85,9 +77,9 @@ public class MelLibrary {
                 case 11 -> displayMemberLoans();
                 case 0 -> {
                     //Clear the screen and exit
-                    System.out.print("\033[H\033[2J");
-                    System.out.flush();
-                    System.out.println("Exiting...");
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+                System.out.println("Exiting...");
                 }
                 default -> {
                     System.out.print("\033[H\033[2J");
@@ -99,7 +91,6 @@ public class MelLibrary {
         scanner.close();
         System.exit(choice);
     }
-
     //Add a book to the database
     public void addBook() {
         System.out.print("\033[H\033[2J");
@@ -140,7 +131,7 @@ public class MelLibrary {
                 System.out.flush();
                 System.out.println("Invalid choice.");
             }
-        }
+            }
     }
 
     //Search book via ISBN
@@ -157,7 +148,6 @@ public class MelLibrary {
         System.out.flush();
         System.out.println("Book with ISBN " + isbn + " not found.");
     }
-
     //Search book by Title
     public void searchTitle() {
         System.out.print("Enter Title: ");
@@ -468,5 +458,10 @@ public class MelLibrary {
             System.out.flush();
             System.out.println("No books currently loaned by this member.");
         }
+    }
+    //Run the script
+    public static void main(String[] ignored) {
+        MelLibrary library = new MelLibrary();
+        library.run();
     }
 }
