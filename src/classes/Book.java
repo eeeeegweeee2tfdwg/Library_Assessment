@@ -13,18 +13,22 @@ public class Book {
         this.title = title;
         this.author = author;
     }
+
     //Define getIsbn function
     public String getIsbn() {
         return this.isbn;
     }
+
     //Define getTitle function
     public String getTitle() {
         return this.title;
     }
+
     //Define getAuthor function
     public String getAuthor() {
         return this.author;
     }
+
     //Define displayInfo function
     public void displayInfo() {
         System.out.println("ISBN: " + isbn);
