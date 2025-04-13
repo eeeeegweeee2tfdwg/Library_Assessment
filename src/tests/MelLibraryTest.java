@@ -60,10 +60,10 @@ class MelLibraryTest {
         System.out.println(isbn + "\n" + title + "\n" + author);
 
         // Assert that the book was added
-        assertEquals(1, TestBooks.size());
-        assertEquals("978-0321765723", TestBooks.getFirst().getIsbn());
-        assertEquals("Effective Java", TestBooks.getFirst().getTitle());
-        assertEquals("Joshua Bloch", TestBooks.getFirst().getAuthor());
+        assertEquals(4, TestBooks.size()); // Check for size of 4
+        assertEquals("978-0321765723", TestBooks.get(3).getIsbn()); // check the last book added.
+        assertEquals("Effective Java", TestBooks.get(3).getTitle());// check the last book added.
+        assertEquals("Joshua Bloch", TestBooks.get(3).getAuthor());// check the last book added.
 
         TestScanner.close(); // Close the scanner
     }
