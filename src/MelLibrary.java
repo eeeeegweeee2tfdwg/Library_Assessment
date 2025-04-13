@@ -1,7 +1,7 @@
 // Import the required modules
-import classes.Book;
-import classes.Loan;
-import classes.Member;
+import stage1_Cameron.Book;
+import stage1_Cameron.Loan;
+import stage1_Cameron.Member;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;

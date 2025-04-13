@@ -1,5 +1,5 @@
 //Declare this is as a package file
-package classes;
+package stage1_Cameron;
 
 //Define Book class
 public class Book {

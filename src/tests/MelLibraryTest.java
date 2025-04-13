@@ -1,10 +1,10 @@
 package tests;
 
-import classes.Book;
-import classes.Member;
+import stage1_Cameron.Book;
+import stage1_Cameron.Member;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import classes.*;
+import stage1_Cameron.*;
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
